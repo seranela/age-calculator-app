@@ -1,37 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Age calculator app</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+	<meta charset="UTF-8">
+	<meta name="description" content="Frontend Mentor Challenge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,700;1,400;1,800&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="css/default.css">
+	<link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+	<title>Frontend Mentor | Age calculator app</title>
 </head>
+
 <body>
+	<main class="main">
+		<form action="#" class="dob-form">
+			<div class="dob-inputs">
+				<div class="dob-input-container">
+					<label id="dob-day-label" class="dob-label">
+						Day
+						<input type="text" id="dob-day" class="dob-input" placeholder="DD" maxlength="2" required>
+					</label>
+					<p id="dob-day-error" class="dob-input-error-message"></p>
+				</div>
 
-  Day
-  DD
+				<div class="dob-input-container">
+					<label id="dob-month-label" class="dob-label">
+						Month
+						<input type="text" id="dob-month" class="dob-input" placeholder="MM" maxlength="2" required>
+					</label>
+					<p id="dob-month-error" class="dob-input-error-message"></p>
+				</div>
 
-  Month
-  MM
+				<div class="dob-input-container">
+					<label id="dob-year-label" class="dob-label">
+						Year
+						<input type="text" id="dob-year" class="dob-input" placeholder="YYYY" maxlength="4" required>
+					</label>
+					<p id="dob-year-error" class="dob-input-error-message"></p>
+				</div>
+			</div>
 
-  Year
-  YYYY
+			<button id="button-calculate" class="button-calculate">
+				<span class="sr-only">Calculate</span>
+			</button>
+		</form>
 
-  -- years
-  -- months
-  -- days
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+		<section class="results">
+			<h2 class="sr-only">Your Age</h2>
+			<p id="result-years"><span class="result-value">--</span> years</p>
+			<p id="result-months"><span class="result-value">--</span> months</p>
+			<p id="result-days"><span class="result-value">--</span> days</p>
+		</section>
+	</main>
+
+	<script src="js/default.js"></script>
 </body>
+
 </html>

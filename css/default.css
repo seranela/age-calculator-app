@@ -1,0 +1,228 @@
+/* Variables */
+
+:root {
+	/* Fonts */
+
+	--font-main: 'Poppins', sans-serif; /* 400i, 700, 800i */
+
+	/* Colors */
+
+	--color-primary-purple: hsl(259, 100%, 65%);
+	--color-primary-light-red: hsl(0, 100%, 67%);
+	--color-neutral-white: hsl(0, 0%, 100%);
+	--color-neutral-off-white: hsl(0, 0%, 94%);
+	--color-neutral-light-grey: hsl(0, 0%, 86%);
+	--color-neutral-smokey-grey: hsl(0, 1%, 44%);
+	--color-neutral-off-black: hsl(0, 0%, 8%);
+}
+
+/* Resets */
+
+html {
+	box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+}
+
+body,
+h1,
+h2,
+h3,
+p {
+	margin: 0;
+}
+
+img {
+	display: inline-block;
+	max-width: 100%;
+	min-width: 0;
+	height: auto;
+}
+
+input,
+button {
+	font: inherit;
+}
+
+button {
+	cursor: pointer;
+}
+
+/* Body */
+
+body {
+	background-color: var(--color-neutral-off-white);
+	color: var(--color-neutral-dark-gray-blue);
+	font: 700 1rem var(--font-main);
+	text-rendering: optimizeSpeed;
+	min-height: 100vh;
+	margin: 1rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.main {
+	background-color: var(--color-neutral-white);
+	padding: 2.5rem 1.5rem;
+	border-radius: 22px 22px 100px 22px;
+	margin-top: 11vh;
+	max-width: 53rem;
+}
+
+/* Form */
+
+.dob-form {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	border-bottom: 2px solid var(--color-neutral-off-white);
+	margin-bottom: 3.5rem;
+}
+
+.dob-inputs {
+	display: flex;
+	gap: 1rem;
+}
+
+.dob-label {
+	font-size: 0.8rem;
+	font-weight: 700;
+	letter-spacing: 0.2em;
+	text-transform: uppercase;
+	color: var(--color-neutral-smokey-grey);
+}
+
+.dob-label-error {
+	color: var(--color-primary-light-red);
+}
+
+.dob-input {
+	width: 100%;
+	padding: 0.6em;
+	border: 2px solid var(--color-neutral-light-grey);
+	border-radius: 8px;
+	font-size: 1.2rem;
+	color: var(--color-neutral-off-black);
+	transition: border-color 0.3s;
+}
+
+/* Chrome, Safari, Edge, Opera */
+.dob-input::-webkit-outer-spin-button,
+.dob-input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+/* Firefox */
+.dob-input[type=number] {
+	-moz-appearance: textfield;
+}
+
+.dob-input:focus {
+	border-color: var(--color-primary-purple);
+	outline: none;
+}
+
+.dob-input-error {
+	border: 2px solid var(--color-primary-light-red);
+}
+
+.dob-input-error-message {
+	color: var(--color-primary-light-red);
+	font-size: 0.7rem;
+	font-weight: 400;
+	font-style: italic;
+	margin-top: 0.3em;
+}
+
+.button-calculate {
+	--button-size: clamp(3.9rem, 7.5vw + 1rem, 6rem);
+	width: var(--button-size);
+	height: var(--button-size);
+	position: relative;
+	bottom: calc(var(--button-size) / -2);
+	border: none;
+	border-radius: 50%;
+	background:
+		url(../assets/images/icon-arrow.svg) center / 40% no-repeat var(--color-primary-purple);
+	transition: background-color 0.3s;
+}
+
+.button-calculate:hover {
+	background-color: var(--color-neutral-off-black);
+}
+
+.button-calculate:focus-visible {
+	outline: 2px solid var(--color-neutral-off-black);
+}
+
+/* Results */
+
+.results {
+	font-size: clamp(2.6rem, 7.5vw + 1rem, 7rem);
+	font-weight: 800;
+	font-style: italic;
+	line-height: 1.1;
+	letter-spacing: -0.03em;
+}
+
+.result-value {
+	color: var(--color-primary-purple);
+}
+
+/* Responsive media queries */
+
+@media (min-width: 576px) {
+	body {
+		place-content: center;
+	}
+
+	.main {
+		margin: 0;
+		padding: 3.5rem;
+	}
+
+	/* Form */
+
+	.dob-inputs {
+		align-self: flex-start;
+		width: 80%;
+	}
+
+	.dob-label {
+		font-size: 0.9rem;
+	}
+
+	.dob-input {
+		padding: 0.6em;
+		font-size: 2rem;
+		margin-top: 0.3em;
+	}
+
+	.button-calculate {
+		align-self: flex-end;
+	}
+}
+
+/* Utility */
+
+.sr-only {
+	/* Screen readers only */
+	border: 0 !important;
+	clip: rect(1px, 1px, 1px, 1px) !important;
+	-webkit-clip-path: inset(50%) !important;
+	clip-path: inset(50%) !important;
+	height: 1px !important;
+	margin: -1px !important;
+	overflow: hidden !important;
+	padding: 0 !important;
+	position: absolute !important;
+	width: 1px !important;
+	white-space: nowrap !important;
+}
