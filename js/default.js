@@ -42,6 +42,7 @@ function isDobValid() {
 	if (!dobYear) {
 		labelDobYear.classList.add('dob-label-error');
 		inputDobYear.value = '';
+		inputDobYear.setAttribute('aria-invalid', true);
 		inputDobYear.classList.add('dob-input-error');
 		document.querySelector('#dob-year-error').innerText = 'This field is required';
 		inputError = true;
@@ -52,11 +53,13 @@ function isDobValid() {
 		if (dobYear < 0 || dobYear > currentDate.getFullYear()) {
 			labelDobYear.classList.add('dob-label-error');
 			inputDobYear.classList.add('dob-input-error');
+			inputDobYear.setAttribute('aria-invalid', true);
 			document.querySelector('#dob-year-error').innerText = 'Must be a valid year';
 			inputError = true;
 		} else {
 			labelDobYear.classList.remove('dob-label-error');
 			inputDobYear.classList.remove('dob-input-error');
+			inputDobYear.setAttribute('aria-invalid', false);
 			document.querySelector('#dob-year-error').innerText = '';
 		}
 	}
@@ -67,6 +70,7 @@ function isDobValid() {
 	if (!dobMonth) {
 		labelDobMonth.classList.add('dob-label-error');
 		inputDobMonth.value = '';
+		inputDobMonth.setAttribute('aria-invalid', true);
 		inputDobMonth.classList.add('dob-input-error');
 		document.querySelector('#dob-month-error').innerText = 'This field is required';
 		inputError = true;
@@ -77,11 +81,13 @@ function isDobValid() {
 		if (dobMonth < 1 || dobMonth > 12) {
 			labelDobMonth.classList.add('dob-label-error');
 			inputDobMonth.classList.add('dob-input-error');
+			inputDobMonth.setAttribute('aria-invalid', true);
 			document.querySelector('#dob-month-error').innerText = 'Must be a valid month';
 			inputError = true;
 		} else {
 			labelDobMonth.classList.remove('dob-label-error');
 			inputDobMonth.classList.remove('dob-input-error');
+			inputDobMonth.setAttribute('aria-invalid', false);
 			document.querySelector('#dob-month-error').innerText = '';
 		}
 	}
@@ -92,6 +98,7 @@ function isDobValid() {
 	if (!dobDay) {
 		labelDobDay.classList.add('dob-label-error');
 		inputDobDay.value = '';
+		inputDobDay.setAttribute('aria-invalid', true);
 		inputDobDay.classList.add('dob-input-error');
 		document.querySelector('#dob-day-error').innerText = 'This field is required';
 		inputError = true;
@@ -102,6 +109,7 @@ function isDobValid() {
 		if (dobDay < 1 || dobDay > 31) {
 			labelDobDay.classList.add('dob-label-error');
 			inputDobDay.classList.add('dob-input-error');
+			inputDobDay.setAttribute('aria-invalid', true);
 			document.querySelector('#dob-day-error').innerText = 'Must be a valid day';
 			inputError = true;
 		} else {
@@ -110,11 +118,13 @@ function isDobValid() {
 			if (dobDay < 1 || dobDay > numberOfDaysInMonth) {
 				labelDobDay.classList.add('dob-label-error');
 				inputDobDay.classList.add('dob-input-error');
+				inputDobDay.setAttribute('aria-invalid', true);
 				document.querySelector('#dob-day-error').innerText = 'Must be a valid day';
 				inputError = true;
 			} else {
 				labelDobDay.classList.remove('dob-label-error');
 				inputDobDay.classList.remove('dob-input-error');
+				inputDobDay.setAttribute('aria-invalid', false);
 				document.querySelector('#dob-day-error').innerText = '';
 			}
 		}
@@ -129,11 +139,13 @@ function isDobValid() {
 	if (diffDays < 0) {
 		labelDobDay.classList.add('dob-label-error');
 		inputDobDay.classList.add('dob-input-error');
+		inputDobDay.setAttribute('aria-invalid', true);
 		document.querySelector('#dob-day-error').innerText = 'Must be a valid date';
 		inputError = true;
 	} else {
 		labelDobDay.classList.remove('dob-label-error');
 		inputDobDay.classList.remove('dob-input-error');
+		inputDobDay.setAttribute('aria-invalid', false);
 		document.querySelector('#dob-day-error').innerText = '';
 	}
 
